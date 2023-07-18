@@ -59,3 +59,5 @@ This project is the implementation of an algorithm which automates the focusing 
     ser.write(command.encode("utf-8"))
  ```
  This block is going to be unclear as the command given to the ser.write method is actually in another file. I currently dont have it in my laptop and I will try to upload the file ASAP. This block is for the clockwise rotation of the motors which are responsible for movement of the platform in the x-direction.
+
+ 
