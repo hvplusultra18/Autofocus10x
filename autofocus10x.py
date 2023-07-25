@@ -107,11 +107,8 @@ def auto3(i,j):
 		sleep(1)
 		print(var)
 
-init()	
-sleep(10)
-auto()
 
-sleep(1)
+
 def scan():
 	if __name__=="__main__":
 		s=0
@@ -136,5 +133,8 @@ def scan():
 			sleep(1)	
 		#move back to the bottom 
 		ser.write("zclk,13000".encode("utf-8"))
-	
+init()	
+sleep(10)
+auto()
+sleep(1)
 scan()
