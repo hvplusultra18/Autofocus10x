@@ -58,6 +58,39 @@ This project is the implementation of an algorithm which automates the focusing 
     command = "xclk,{}".format(distance)
     ser.write(command.encode("utf-8"))
  ```
- This block is going to be unclear as the command given to the ser.write method is actually in another file. I currently dont have it in my laptop and I will try to upload the file ASAP. This block is for the clockwise rotation of the motors which are responsible for movement of the platform in the x-direction.
+ This block is for the clockwise rotation of the motors which are responsible for movement of the platform in the x-direction. The ser.write command is used to communicate with the arduino and give input to the serial moniter of Arduino which then gives the command to move the motors.
+
+The other functions below this are similar to this one in terms of functioanlity and the methodss used.
+
+```python
+def variance(image):
+	bg=cv2.GaussianBlur(image,(11,11),0)
+	v=cv2.Laplacian(bg,cv2.CV_64F).var()
+	return v
+```
+The variance function 
+
+Let us come to the auto() function:
+
+```python
+if __name__ == '__main__':
+   z=[]
+   var=[]
+   l=0
+   camera.start_preview()
+   ser.reset_input_buffer()
+   sleep(1)
+   camera.resolution=(320,240)
+   camera.framerate=24
+   ser.write("zcclk,12250".encode("utf-8"))
+   sleep(30)
+```
+
+We initialize arrays to store the z position, the variance of the image and the current z position or the position to which the microscope will move to get themost focused image
+
+
+
+
+
 
  

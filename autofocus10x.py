@@ -55,7 +55,7 @@ def auto():
 		camera.resolution=(320,240)
 		camera.framerate=24
 		ser.write("zcclk,12250".encode("utf-8"))
-		sleep(30);
+		sleep(30)
 		for i in range(21):
 			image=np.empty((240*320*3),dtype=np.uint8)
 			camera.capture(image,'bgr')
